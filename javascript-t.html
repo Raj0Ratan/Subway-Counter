@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		body {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: white;
+		}
+		.container{
+			background: url("https://images.pexels.com/photos/5098043/pexels-photo-5098043.jpeg?cs=srgb&dl=pexels-elena-saharova-5098043.jpg&fm=jpg");
+			background-size: cover;
+		}
+
+		.main {
+			width: 300px;
+			height: 300px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			backdrop-filter: blur(1px);
+		}
+		button {
+			width: 200px;
+			height: 30px;
+			border-radius: 7px;
+			margin-bottom: 2px;
+			color: white;
+			outline: none;
+/*			border: none;*/
+		}
+		h1 {
+			position: relative;
+			top: -50px;
+			background: #1144ed;
+			line-height: 50px;
+			width: 100%;
+			text-align: center;
+		}
+		h1 ,h2{
+			margin-top: 10px;
+			font-weight: 900;
+			text-shadow: 2px 2px 2px black;
+		}
+		p {
+			font-size: 17px;
+			margin-top: 10px;
+			text-shadow: 2px 2px 4px black;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="main">
+			<h1>Subway Counter</h1>
+			<h2 class="rat">People entered: </h2>
+			<h2 id="num">0</h2>
+			<button id="bto-1" class="btn" style="background: red;" onclick="increment()">Increment</button>
+			<button id="bto-2" class="btn" style="background: green;" onclick="save()">Save</button>
+			<p id="para">previous enteries: </p>
+		</div>
+	</div>
+
+
+
+	<script>
+		let count = 0;
+		let saveEl = document.getElementById("para");
+		let countEl = document.getElementById("num");
+
+
+		function increment(){
+			count += 1
+			countEl.textContent = count
+		}
+
+		function save() {
+			let countStr = "-" + count
+			saveEl.textContent += countStr
+			countEl.textContent = 0
+			count = 0
+		}
+	</script>
+</body>
+</html>
